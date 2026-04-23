@@ -4,15 +4,15 @@ import ServiceBox from '../Service/ServiceBox'
 
 const Services = () => {
   return (
-    <div className="h-full page-shadow bg-white p-5 sm:p-8 md:p-10">
+    <div className="h-full page-shadow bg-white p-4 sm:p-6">
       {/* heading */}
       <Heading
         title="Services"
-        subtitle="Services I can gladly help with:"
+        subtitle="Services I can help with"
       />
 
       {/* Services Card  */}
-      <div>
+      <div className="mt-3">
         <ServiceBox/>
       </div>
     </div>

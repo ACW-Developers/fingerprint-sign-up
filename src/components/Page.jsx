@@ -3,10 +3,10 @@ import { forwardRef } from "react";
 
 const Page = forwardRef((props, ref) => {
   return (
-    <div className="demoPage bg-white overflow-hidden" ref={ref}>
-      <div className="h-full overflow-y-auto">{props.children}</div>
-      <p className="text-xs text-end text-black pb-2 pr-3">
-        Page: {props.number}
+    <div className="demoPage bg-white overflow-hidden flex flex-col" ref={ref}>
+      <div className="flex-1 overflow-y-auto">{props.children}</div>
+      <p className="text-[10px] text-end text-black/60 pb-1 pr-2 shrink-0">
+        {props.number}
       </p>
     </div>
   );

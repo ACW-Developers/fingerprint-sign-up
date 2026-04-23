@@ -6,28 +6,25 @@ const FirstPage = () => {
   return (
     <div className="h-full">
       <main className="h-full w-full bg-tertiary page-shadow">
-        <div className="px-6 sm:px-10 md:px-12 py-6 space-y-4">
-          <div>
-            <img
-              src={myimg}
-              alt="Amos Clinton"
-              className="w-40 sm:w-56 md:w-[260px] mx-auto rounded shadow-md"
-            />
-          </div>
-          <div className="space-y-3 text-left">
-            <p className="uppercase tracking-wide text-sm">Hello,</p>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black/80">
+        <div className="px-4 sm:px-6 py-4 space-y-3">
+          <img
+            src={myimg}
+            alt="Amos Clinton"
+            className="w-28 sm:w-36 md:w-44 mx-auto rounded shadow-md"
+          />
+          <div className="space-y-1.5 text-left">
+            <p className="uppercase tracking-wide text-[10px] sm:text-xs text-black/60">Hello,</p>
+            <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-black/80 leading-tight">
               I&apos;m Amos Clinton
             </h1>
-            <p className="text-black/75 font-semibold">A Fullstack Developer</p>
-            <p className="text-black/75 text-sm sm:text-base leading-relaxed">
-              I am dedicated to crafting solutions that blend creativity with
-              functionality. I bring user-focused designs to life through clean,
-              responsive code ensuring a seamless experience for users across all
-              devices. Let&apos;s build something amazing together!
+            <p className="text-black/75 font-semibold text-xs sm:text-sm">A Fullstack Developer</p>
+            <p className="text-black/70 text-[11px] sm:text-xs leading-snug">
+              I craft solutions that blend creativity with functionality —
+              clean, responsive code delivering a seamless experience across
+              all devices.
             </p>
             <a
-              className="inline-block bg-purple-400 primary-btn"
+              className="primary-btn bg-purple-500"
               href="mailto:amosclinton196@gmail.com"
             >
               Get in Touch
