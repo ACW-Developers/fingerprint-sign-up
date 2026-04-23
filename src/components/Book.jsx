@@ -28,19 +28,45 @@ import surgery from "../assets/surgery.png";
 
 function Book() {
   const [bookSize, setBookSize] = useState({
-    width: 600,
-    height: 700
+    width: 500,
+    height: 650,
   });
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setBookSize({ width: 700, height: 800 });
-      } else if (window.innerWidth < 1024) {
-        setBookSize({ width: 700, height: 800 });
-      } else {
-        setBookSize({ width: 600, height: 700 });
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+
+      // Padding around the book
+      const horizontalPadding = 24;
+      const verticalPadding = 24;
+
+      // The flipbook renders two pages side-by-side on desktop, one on mobile.
+      // We size a single page; the library handles the spread.
+      const isMobile = vw < 768;
+
+      // Available width per page
+      const maxAvailableWidth = isMobile
+        ? vw - horizontalPadding
+        : (vw - horizontalPadding) / 2;
+
+      const maxAvailableHeight = vh - verticalPadding;
+
+      // Maintain ~3:4 aspect ratio
+      const aspect = 4 / 3; // height / width
+      let width = Math.min(maxAvailableWidth, 600);
+      let height = width * aspect;
+
+      if (height > maxAvailableHeight) {
+        height = maxAvailableHeight;
+        width = height / aspect;
       }
+
+      // Reasonable minimums
+      width = Math.max(280, Math.floor(width));
+      height = Math.max(380, Math.floor(height));
+
+      setBookSize({ width, height });
     };
 
     handleResize();
@@ -145,10 +171,16 @@ function Book() {
   ];
 
   return (
-    <div className="flex justify-center items-center w-full h-full p-4">
-      <HTMLFlipBook 
-        width={bookSize.width} 
+    <div className="flex justify-center items-center w-full min-h-screen p-2 sm:p-4">
+      <HTMLFlipBook
+        width={bookSize.width}
         height={bookSize.height}
+        size="stretch"
+        minWidth={280}
+        maxWidth={600}
+        minHeight={380}
+        maxHeight={900}
+        mobileScrollSupport={true}
         showCover={true}
         className="shadow-2xl"
       >

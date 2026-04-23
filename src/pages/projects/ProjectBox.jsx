@@ -6,39 +6,43 @@ import { AiFillGithub } from "react-icons/ai";
 const ProjectBox = ({ ProjectData }) => {
   return (
     <div>
-      <div className="grid grid-cols-2 gap-4 mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6 sm:mt-10">
         {ProjectData.map((project, index) => {
           return (
-            <div key={index} className="h-[160px] rounded-xl">
+            <div key={index} className="rounded-xl">
               <img
                 src={project.image}
-                alt=""
-                className="w-full h-full object-cover rounded-xl"
+                alt={project.name}
+                className="w-full h-36 sm:h-40 object-cover rounded-xl"
               />
               {/* details section */}
               <div className="pt-3">
-                <h1 className="text-2xl font-semibold">{project.name}</h1>
-                <p className=" line-clamp-6 text-gray-500">
+                <h3 className="text-lg sm:text-xl font-semibold">{project.name}</h3>
+                <p className="line-clamp-4 text-gray-500 text-sm sm:text-base">
                   {project.description}
                 </p>
-                <p className="text-black">
+                <p className="text-black text-xs sm:text-sm mt-1">
                   {project.tools}
                 </p>
 
-                <div className="flex space-x-6 align-baseline">
-                <a
-                  href={project.previewLink}
-                  target="_blank"
-                  className="primary-btn mt-3"
-                >
-                  View project
-                </a>
-                <a
-                  href={project.githubLink}>
-                <AiFillGithub className="social-btn text-primary/80 mt-2" />
-                </a>
-              </div>
-
+                <div className="flex items-center space-x-4 mt-2">
+                  <a
+                    href={project.previewLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="primary-btn mt-1 text-sm"
+                  >
+                    View project
+                  </a>
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub repository"
+                  >
+                    <AiFillGithub className="text-3xl sm:text-4xl text-primary/80 hover:text-primary cursor-pointer duration-200" />
+                  </a>
+                </div>
               </div>
             </div>
           );
