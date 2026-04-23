@@ -5,15 +5,15 @@ import ProjectBox from "./ProjectBox.jsx";
 
 const Projects = ({ ProjectData }) => {
   return (
-    <div className="h-full page-shadow bg-white p-3 sm:p-5">
+    <div className="h-full page-shadow bg-white p-4 sm:p-8 md:p-10">
       {/* heading */}
       <Heading
         title="Projects"
-        subtitle="Some of my recent projects"
+        subtitle="Some of my recent projects:"
       />
 
       {/* Project section  */}
-      <div className="mt-2">
+      <div>
         <ProjectBox ProjectData={ProjectData} />
       </div>
     </div>

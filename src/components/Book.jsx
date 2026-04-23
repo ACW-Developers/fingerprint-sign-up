@@ -37,18 +37,24 @@ function Book() {
       const vw = window.innerWidth;
       const vh = window.innerHeight;
 
-      const horizontalPadding = 16;
-      const verticalPadding = 16;
+      // Padding around the book
+      const horizontalPadding = 24;
+      const verticalPadding = 24;
+
+      // The flipbook renders two pages side-by-side on desktop, one on mobile.
+      // We size a single page; the library handles the spread.
       const isMobile = vw < 768;
 
+      // Available width per page
       const maxAvailableWidth = isMobile
         ? vw - horizontalPadding
         : (vw - horizontalPadding) / 2;
+
       const maxAvailableHeight = vh - verticalPadding;
 
-      // 3:4 portrait page (height = 1.4 × width gives more vertical room)
-      const aspect = 1.4;
-      let width = Math.min(maxAvailableWidth, 480);
+      // Maintain ~3:4 aspect ratio
+      const aspect = 4 / 3; // height / width
+      let width = Math.min(maxAvailableWidth, 600);
       let height = width * aspect;
 
       if (height > maxAvailableHeight) {
@@ -56,6 +62,7 @@ function Book() {
         width = height / aspect;
       }
 
+      // Reasonable minimums
       width = Math.max(280, Math.floor(width));
       height = Math.max(380, Math.floor(height));
 

@@ -3,16 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  html, body, #root {
-    font-family: 'Poppins', system-ui, sans-serif;
-    font-size: 14px;
-  }
-  @media (min-width: 768px) {
-    html, body, #root { font-size: 15px; }
-  }
-}
-
-@layer base {
   .font-outline-2 {
     -webkit-text-stroke: 2px white;
   }
@@ -20,25 +10,18 @@
 
 @layer components {
   .primary-btn {
-    @apply inline-block bg-primary text-white cursor-pointer hover:bg-primary/80 py-1.5 px-3 my-2 rounded-md text-xs sm:text-sm;
+    @apply inline-block bg-primary text-white cursor-pointer hover:bg-primary/80 py-2 px-4 my-3 rounded-lg;
   }
 
   .outline-btn {
-    @apply inline-block ring-2 ring-primary inset-0 text-primary cursor-pointer hover:bg-primary/80 hover:text-white py-1.5 px-3 my-2 rounded-md text-xs sm:text-sm;
+    @apply inline-block ring-2 ring-primary inset-0 text-primary cursor-pointer hover:bg-primary/80 hover:text-white py-2 px-4 my-3 rounded-lg;
   }
 
   .social-btn {
-    @apply text-3xl hover:text-primary duration-200 cursor-pointer;
+    @apply text-5xl hover:text-primary duration-200 cursor-pointer;
   }
 
   .page-shadow {
     @apply shadow-[inset_0_0_8px_rgba(0,0,0,0.6),12px_12px_14px_rgba(0,0,0,0.9)];
   }
 }
-
-/* Flipbook page polish */
-.demoPage {
-  background-color: #ffffff;
-}
-.demoPage::-webkit-scrollbar { width: 4px; }
-.demoPage::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 4px; }

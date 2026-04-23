@@ -81,18 +81,18 @@ const Cover = ({ coverImg, title, subtitle }) => {
       )}
 
       {/* Centered Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-between text-center p-6">
-        <div className="pt-6">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-300 mb-1">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
+        <div className="max-w-4xl w-full">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-400 mb-4">
             {title}
           </h1>
-          <p className="text-sm sm:text-base text-gray-400 font-semibold">
+          <p className="text-xl md:text-2xl text-gray-400 font-semibold mb-96">
             Portfolio
           </p>
+          <p className="text-lg md:text-xl text-gray-400 max-w-md mx-auto">
+            {subtitle}
+          </p>
         </div>
-        <p className="text-xs sm:text-sm text-gray-300 max-w-xs pb-6">
-          {subtitle}
-        </p>
       </div>
     </div>
   );
