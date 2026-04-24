@@ -1,18 +1,18 @@
 const Skills = () => {
   return (
-    <div className="h-full page-shadow bg-white px-4 sm:px-8 md:px-10 py-3 relative">
+    <div className="h-full page-shadow bg-white px-4 sm:px-6 md:px-8 py-4 relative">
       {/* Heading */}
-      <div className="relative mb-2">
-        <div className="text-center py-1 text-4xl sm:text-5xl xl:text-7xl font-bold text-black/5">
+      <div className="relative mb-3">
+        <div className="text-center py-1 text-3xl sm:text-4xl xl:text-5xl font-bold text-black/5">
           SKILLS
         </div>
-        <h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl sm:text-3xl md:text-4xl">
+        <h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-lg sm:text-xl md:text-2xl font-semibold">
           My Strengths
         </h1>
       </div>
 
       {/* Skills Sections */}
-      <div className="space-y-3">
+      <div className="space-y-2.5">
         {/* Programming Languages */}
         <div>
           <h2 className="text-lg sm:text-xl md:text-2xl mb-1 font-bold text-black/80">Programming Languages</h2>
