@@ -6,31 +6,32 @@ import { AiFillGithub } from "react-icons/ai";
 const ProjectBox = ({ ProjectData }) => {
   return (
     <div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 sm:mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mt-3 sm:mt-6">
         {ProjectData.map((project, index) => {
           return (
             <div key={index} className="rounded-xl">
               <img
                 src={project.image}
                 alt={project.name}
-                className="w-full h-28 sm:h-32 object-cover rounded-xl"
+                loading="lazy"
+                className="w-full h-24 sm:h-28 md:h-32 object-cover rounded-xl"
               />
               {/* details section */}
-              <div className="pt-2">
-                <h3 className="text-sm sm:text-base font-semibold">{project.name}</h3>
-                <p className="line-clamp-3 text-gray-500 text-xs sm:text-sm">
+              <div className="pt-1.5 sm:pt-2">
+                <h3 className="text-xs sm:text-sm md:text-base font-semibold">{project.name}</h3>
+                <p className="line-clamp-2 sm:line-clamp-3 text-gray-500 text-[11px] sm:text-xs md:text-sm">
                   {project.description}
                 </p>
-                <p className="text-black text-[11px] sm:text-xs mt-1">
+                <p className="text-black text-[10px] sm:text-[11px] md:text-xs mt-1">
                   {project.tools}
                 </p>
 
-                <div className="flex items-center space-x-3 mt-2">
+                <div className="flex items-center space-x-2 sm:space-x-3 mt-1.5 sm:mt-2">
                   <a
                     href={project.previewLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="primary-btn mt-1 text-xs"
+                    className="primary-btn mt-1 text-[11px] sm:text-xs py-1 px-2 sm:py-1.5 sm:px-3"
                   >
                     View project
                   </a>
@@ -40,7 +41,7 @@ const ProjectBox = ({ ProjectData }) => {
                     rel="noopener noreferrer"
                     aria-label="GitHub repository"
                   >
-                    <AiFillGithub className="text-2xl sm:text-3xl text-primary/80 hover:text-primary cursor-pointer duration-200" />
+                    <AiFillGithub className="text-xl sm:text-2xl md:text-3xl text-primary/80 hover:text-primary cursor-pointer duration-200" />
                   </a>
                 </div>
               </div>

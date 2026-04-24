@@ -60,8 +60,8 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* Soft Skills */}
-        <div>
+        {/* Soft Skills - hidden on small screens */}
+        <div className="hidden md:block">
           <h2 className="text-sm sm:text-base font-bold text-black/80 mb-1">Soft Skills</h2>
           <div className="flex flex-wrap gap-2">
             <span className="bg-primary/20 px-3 py-1 rounded text-sm">Problem-Solving</span>
