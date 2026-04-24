@@ -215,25 +215,14 @@ function Book() {
           <Resume />
         </Page>
 
-        <Page number={6}>
-          <Projects ProjectData={ProjectData} />
-        </Page>
-
-        <Page number={7}>
-          <Projects ProjectData={ProjectData2} />
-        </Page>
-
-        <Page number={8}>
-          <Projects ProjectData={ProjectData3} />
-        </Page>
-
-        <Page number={9}>
-          <Projects ProjectData={ProjectData4} />
-        </Page>
-
-        <Page number={10}>
-          <Projects ProjectData={ProjectData5} />
-        </Page>
+        {(isMobile
+          ? [...ProjectData, ...ProjectData2, ...ProjectData3, ...ProjectData4, ...ProjectData5].map((p) => [p])
+          : [ProjectData, ProjectData2, ProjectData3, ProjectData4, ProjectData5]
+        ).map((data, idx) => (
+          <Page key={`proj-${idx}`} number={6 + idx}>
+            <Projects ProjectData={data} />
+          </Page>
+        ))}
 
         <Page number={11}>
           <Contac />
