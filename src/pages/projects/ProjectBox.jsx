@@ -14,7 +14,8 @@ const ProjectBox = ({ ProjectData }) => {
                 src={project.image}
                 alt={project.name}
                 loading="lazy"
-                className="w-full h-24 sm:h-28 md:h-32 object-cover rounded-xl"
+                decoding="async"
+                className="w-full h-44 sm:h-32 md:h-32 object-cover rounded-xl"
               />
               {/* details section */}
               <div className="pt-1.5 sm:pt-2">

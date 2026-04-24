@@ -12,21 +12,34 @@ const About = () => {
       />
 
       <div className="mt-4 sm:mt-6 text-slate-500 text-xs sm:text-sm leading-relaxed">
-        <p className="mb-2 sm:mb-3">
-          I'm a passionate IT professional with a strong technical foundation and a drive for solving real-world problems through software innovation. I specialize in building transformative digital solutions that deliver measurable impact.
-        </p>
+        {/* Mobile: concise summary */}
+        <div className="md:hidden">
+          <p className="mb-2">
+            IT professional building full-stack solutions across logistics, travel, and agri-tech.
+          </p>
+          <p className="mb-2">
+            BSc in IT (Kisii University). Currently leading AI-driven projects at the Artificial Intelligence Alliance in Agriculture.
+          </p>
+          <p className="mb-3">
+            Open to new opportunities — let’s connect.
+          </p>
+        </div>
 
-        <p className="mb-2 sm:mb-3">
-          I hold a BSc in Information Technology (Second Class Upper) from Kisii University and have delivered full-stack applications across logistics, travel, and agri-tech domains.
-        </p>
-
-        <p className="mb-2 sm:mb-3">
-          At the Artificial Intelligence Alliance in Agriculture, I lead AI-driven projects reshaping Kenya’s agricultural landscape. I thrive on merging technical excellence with purpose-driven innovation.
-        </p>
-
-        <p className="mb-3 sm:mb-4">
-          I'm eager to bring my skills to visionary teams. Let’s connect — I’m just a click away.
-        </p>
+        {/* Desktop: full bio */}
+        <div className="hidden md:block">
+          <p className="mb-3">
+            I'm a passionate IT professional with a strong technical foundation and a drive for solving real-world problems through software innovation. I specialize in building transformative digital solutions that deliver measurable impact.
+          </p>
+          <p className="mb-3">
+            I hold a BSc in Information Technology (Second Class Upper) from Kisii University and have delivered full-stack applications across logistics, travel, and agri-tech domains.
+          </p>
+          <p className="mb-3">
+            At the Artificial Intelligence Alliance in Agriculture, I lead AI-driven projects reshaping Kenya’s agricultural landscape. I thrive on merging technical excellence with purpose-driven innovation.
+          </p>
+          <p className="mb-4">
+            I'm eager to bring my skills to visionary teams. Let’s connect — I’m just a click away.
+          </p>
+        </div>
 
         <div className="flex flex-wrap gap-3 mt-4 sm:mt-6">
           <a href="mailto:amosclinton196@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email me">
