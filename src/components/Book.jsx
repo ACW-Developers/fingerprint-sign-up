@@ -31,6 +31,7 @@ function Book() {
     width: 500,
     height: 650,
   });
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -44,6 +45,7 @@ function Book() {
       // The flipbook renders two pages side-by-side on desktop, one on mobile.
       // We size a single page; the library handles the spread.
       const isMobile = vw < 768;
+      setIsMobile(isMobile);
 
       // Available width per page
       const maxAvailableWidth = isMobile
@@ -52,9 +54,9 @@ function Book() {
 
       const maxAvailableHeight = vh - verticalPadding;
 
-      // Maintain ~3:4 aspect ratio
-      const aspect = 4 / 3; // height / width
-      let width = Math.min(maxAvailableWidth, 600);
+      // Maintain a slightly shorter aspect ratio to avoid extra space on large screens
+      const aspect = isMobile ? 1.4 : 1.25; // height / width
+      let width = Math.min(maxAvailableWidth, 560);
       let height = width * aspect;
 
       if (height > maxAvailableHeight) {
@@ -64,7 +66,7 @@ function Book() {
 
       // Reasonable minimums
       width = Math.max(280, Math.floor(width));
-      height = Math.max(380, Math.floor(height));
+      height = Math.max(360, Math.floor(height));
 
       setBookSize({ width, height });
     };
@@ -213,25 +215,14 @@ function Book() {
           <Resume />
         </Page>
 
-        <Page number={6}>
-          <Projects ProjectData={ProjectData} />
-        </Page>
-
-        <Page number={7}>
-          <Projects ProjectData={ProjectData2} />
-        </Page>
-
-        <Page number={8}>
-          <Projects ProjectData={ProjectData3} />
-        </Page>
-
-        <Page number={9}>
-          <Projects ProjectData={ProjectData4} />
-        </Page>
-
-        <Page number={10}>
-          <Projects ProjectData={ProjectData5} />
-        </Page>
+        {(isMobile
+          ? [...ProjectData, ...ProjectData2, ...ProjectData3, ...ProjectData4, ...ProjectData5].map((p) => [p])
+          : [ProjectData, ProjectData2, ProjectData3, ProjectData4, ProjectData5]
+        ).map((data, idx) => (
+          <Page key={`proj-${idx}`} number={6 + idx}>
+            <Projects ProjectData={data} />
+          </Page>
+        ))}
 
         <Page number={11}>
           <Contac />
