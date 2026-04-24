@@ -54,19 +54,25 @@ function Book() {
 
       const maxAvailableHeight = vh - verticalPadding;
 
-      // Maintain a slightly shorter aspect ratio to avoid extra space on large screens
-      const aspect = isMobile ? 1.4 : 1.25; // height / width
-      let width = Math.min(maxAvailableWidth, 560);
+      // Aspect ratio (height / width). Mobile is taller; desktop is shorter
+      // to avoid excess empty space below the book on large screens.
+      const aspect = isMobile ? 1.45 : 1.15;
+
+      // Cap width tighter on desktop so the overall book height stays compact.
+      const widthCap = isMobile ? 520 : 480;
+      let width = Math.min(maxAvailableWidth, widthCap);
       let height = width * aspect;
 
-      if (height > maxAvailableHeight) {
-        height = maxAvailableHeight;
+      // Cap height to a fraction of viewport so it never feels too tall.
+      const heightCap = Math.min(maxAvailableHeight, Math.floor(vh * 0.92));
+      if (height > heightCap) {
+        height = heightCap;
         width = height / aspect;
       }
 
-      // Reasonable minimums
+      // Reasonable minimums to avoid clipping content.
       width = Math.max(280, Math.floor(width));
-      height = Math.max(360, Math.floor(height));
+      height = Math.max(isMobile ? 460 : 520, Math.floor(height));
 
       setBookSize({ width, height });
     };
