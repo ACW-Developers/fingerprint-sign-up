@@ -12,31 +12,31 @@ const Contact = () => {
 
   const contactItems = [
     {
-      icon: <FaUser className="text-2xl" />,
+      icon: <FaUser className="text-lg" />,
       label: "Full Name:",
       value: "Amos Clinton Wanyangu",
       field: "name"
     },
     {
-      icon: <FaEnvelope className="text-2xl" />,
+      icon: <FaEnvelope className="text-lg" />,
       label: "Email:",
       value: "amosclinton196@gmail.com",
       field: "email"
     },
     {
-      icon: <FaPhone className="text-2xl" />,
+      icon: <FaPhone className="text-lg" />,
       label: "Phone:",
       value: "+254 114 290 760",
       field: "phone"
     },
     {
-      icon: <FaMapMarkerAlt className="text-2xl" />,
+      icon: <FaMapMarkerAlt className="text-lg" />,
       label: "Location:",
       value: "Kisii County, Kisii, Kenya",
       field: "location"
     },
     {
-      icon: <FaGraduationCap className="text-2xl" />,
+      icon: <FaGraduationCap className="text-lg" />,
       label: "Education:",
       value: "BSC Information Technology Graduate, Kisii University, Class of 2024",
       field: "education"
@@ -44,51 +44,51 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-full flex items-center justify-center bg-gradient-to-br from-gray-700 via-gray-900 to-black text-white p-4">
-      <div className="max-w-4xl w-full bg-white bg-opacity-5 rounded-2xl p-7 shadow-2xl backdrop-blur-lg border border-white border-opacity-10 hover:border-opacity-20 transition-all duration-300">
+    <div className="min-h-full flex items-center justify-center bg-gradient-to-br from-gray-700 via-gray-900 to-black text-white p-3 sm:p-4">
+      <div className="max-w-4xl w-full bg-white bg-opacity-5 rounded-2xl p-4 sm:p-5 shadow-2xl backdrop-blur-lg border border-white border-opacity-10 hover:border-opacity-20 transition-all duration-300">
         <div className="text-center pb-2">
-          <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mb-2">
+          <h1 className="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mb-1">
             Contact Information
           </h1>
-          <p className="text-gray-300 text-lg max-w-lg mx-auto">
+          <p className="text-gray-300 text-xs sm:text-sm max-w-lg mx-auto">
             Here are my details, feel free to reach out or connect with me on professional networks!
           </p>
           
-          <div className="flex justify-center gap-4 mt-2">
+          <div className="flex justify-center gap-3 mt-3">
             <a 
               href="https://www.linkedin.com/in/amos-clinton-b65158222/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-3 bg-blue-600 hover:bg-blue-700 rounded-full transition-colors duration-300"
+              className="p-2 bg-blue-600 hover:bg-blue-700 rounded-full transition-colors duration-300"
               aria-label="LinkedIn"
             >
-              <FaLinkedin className="text-xl" />
+              <FaLinkedin className="text-base" />
             </a>
             <a 
               href="https://github.com/Wanyangu1" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-3 bg-gray-800 hover:bg-gray-700 rounded-full transition-colors duration-300"
+              className="p-2 bg-gray-800 hover:bg-gray-700 rounded-full transition-colors duration-300"
               aria-label="GitHub"
             >
-              <FaGithub className="text-xl" />
+              <FaGithub className="text-base" />
             </a>
           </div>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-1.5 mt-3">
           {contactItems.map((item, index) => (
             <div 
               key={index} 
-              className="flex flex-col sm:flex-row sm:items-center gap-4 p-2 bg-white bg-opacity-5 rounded-xl hover:bg-opacity-10 transition-all duration-200"
+              className="flex flex-row items-center gap-3 p-2 bg-white bg-opacity-5 rounded-xl hover:bg-opacity-10 transition-all duration-200"
             >
               <div className="text-cyan-400 flex-shrink-0">
                 {item.icon}
               </div>
               <div className="flex-1 min-w-0">
-                <div className="font-semibold text-gray-300">{item.label}</div>
+                <div className="font-semibold text-gray-300 text-xs">{item.label}</div>
                 <div 
-                  className={`text-white truncate ${item.field === 'education' ? 'sm:whitespace-normal' : ''}`}
+                  className={`text-white text-xs sm:text-sm truncate ${item.field === 'education' ? 'sm:whitespace-normal' : ''}`}
                 >
                   {item.value}
                 </div>
@@ -96,11 +96,11 @@ const Contact = () => {
               {item.field !== 'name' && item.field !== 'education' && item.field !== 'id' && (
                 <button 
                   onClick={() => handleCopy(item.value, item.field)}
-                  className="p-2 bg-white bg-opacity-0 hover:bg-opacity-10 rounded-md transition-colors duration-200 flex items-center gap-2"
+                  className="p-1.5 bg-white bg-opacity-0 hover:bg-opacity-10 rounded-md transition-colors duration-200 flex items-center gap-1"
                   aria-label={`Copy ${item.label}`}
                 >
-                  <FaCopy className="text-gray-400" />
-                  <span className="text-xs text-gray-400">
+                  <FaCopy className="text-gray-400 text-xs" />
+                  <span className="text-[10px] text-gray-400">
                     {copied === item.field ? 'Copied!' : 'Copy'}
                   </span>
                 </button>
@@ -109,7 +109,7 @@ const Contact = () => {
           ))}
         </div>
 
-        <div className="mt-4 text-center text-gray-400 text-sm">
+        <div className="mt-3 text-center text-gray-400 text-xs">
           <p>I am open to new opportunities and collaborations. Let us connect!</p>
         </div>
       </div>
