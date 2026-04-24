@@ -15,7 +15,7 @@ const Skills = () => {
       <div className="space-y-2.5">
         {/* Programming Languages */}
         <div>
-          <h2 className="text-lg sm:text-xl md:text-2xl mb-1 font-bold text-black/80">Programming Languages</h2>
+          <h2 className="text-sm sm:text-base font-bold text-black/80 mb-1">Programming Languages</h2>
           <div className="flex flex-wrap gap-2">
             <span className="bg-primary/20 px-3 py-1 rounded text-sm">Python</span>
             <span className="bg-primary/10 px-3 py-1 rounded text-sm">JavaScript</span>
@@ -26,7 +26,7 @@ const Skills = () => {
 
         {/* Frameworks & Technologies */}
         <div>
-          <h2 className="text-lg sm:text-xl md:text-2xl mb-1 font-bold text-black/80">Frameworks & Technologies</h2>
+          <h2 className="text-sm sm:text-base font-bold text-black/80 mb-1">Frameworks & Technologies</h2>
           <div className="flex flex-wrap gap-2">
             <span className="bg-primary/10 px-3 py-1 rounded text-sm">Django</span>
             <span className="bg-primary/20 px-3 py-1 rounded text-sm">Vue.js</span>
@@ -38,7 +38,7 @@ const Skills = () => {
 
         {/* Database Management */}
         <div>
-          <h2 className="text-lg sm:text-xl md:text-2xl mb-1 font-bold text-black/80">Database Management</h2>
+          <h2 className="text-sm sm:text-base font-bold text-black/80 mb-1">Database Management</h2>
           <div className="flex flex-wrap gap-2">
             <span className="bg-primary/20 px-3 py-1 rounded text-sm">Firebase</span>
             <span className="bg-primary/10 px-3 py-1 rounded text-sm">MySQL</span>
@@ -48,7 +48,7 @@ const Skills = () => {
 
         {/* Development Tools */}
         <div>
-          <h2 className="text-lg sm:text-xl md:text-2xl mb-1 font-bold text-black/80">Development Tools</h2>
+          <h2 className="text-sm sm:text-base font-bold text-black/80 mb-1">Development Tools</h2>
           <div className="flex flex-wrap gap-2">
             <span className="bg-primary/10 px-3 py-1 rounded text-sm">VS Code</span>
             <span className="bg-primary/20 px-3 py-1 rounded text-sm">IntelliJ IDEA</span>
@@ -62,7 +62,7 @@ const Skills = () => {
 
         {/* Soft Skills */}
         <div>
-          <h2 className="text-lg sm:text-xl md:text-2xl mb-1 font-bold text-black/80">Soft Skills</h2>
+          <h2 className="text-sm sm:text-base font-bold text-black/80 mb-1">Soft Skills</h2>
           <div className="flex flex-wrap gap-2">
             <span className="bg-primary/20 px-3 py-1 rounded text-sm">Problem-Solving</span>
             <span className="bg-primary/10 px-3 py-1 rounded text-sm">Time Management</span>
@@ -75,7 +75,7 @@ const Skills = () => {
 
         {/* Deployment */}
         <div>
-          <h2 className="text-lg sm:text-xl md:text-2xl mb-1 font-bold text-black/80">Deployment</h2>
+          <h2 className="text-sm sm:text-base font-bold text-black/80 mb-1">Deployment</h2>
           <div className="flex flex-wrap gap-2">
             <span className="bg-primary/10 px-3 py-1 rounded text-sm">Hostpinnacle</span>
             <span className="bg-primary/20 px-3 py-1 rounded text-sm">Netlify</span>

@@ -32,14 +32,14 @@ const ServicesData = [
 ];
 const ServiceBox = () => {
   return (
-    <div className="h-full mt-6 sm:mt-10 text-white">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+    <div className="h-full mt-4 sm:mt-6 text-white">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         {ServicesData.map(({ name, description, icon, bgColor }, idx) => (
-          <div key={idx} className={`p-3 ${bgColor} min-h-[150px] sm:min-h-[180px] rounded-xl`}>
-            <div className="p-2 sm:p-3 space-y-2 sm:space-y-3">
-              {icon}
-              <h3 className="font-semibold text-black/60 text-base sm:text-lg">{name}</h3>
-              <p className="text-sm sm:text-base">{description}</p>
+          <div key={idx} className={`p-3 ${bgColor} min-h-[130px] sm:min-h-[150px] rounded-xl`}>
+            <div className="p-1.5 sm:p-2 space-y-1.5 sm:space-y-2">
+              <div className="text-2xl sm:text-3xl">{icon}</div>
+              <h3 className="font-semibold text-black/60 text-sm sm:text-base">{name}</h3>
+              <p className="text-xs sm:text-sm leading-snug">{description}</p>
             </div>
           </div>
         ))}
