@@ -31,6 +31,7 @@ function Book() {
     width: 500,
     height: 650,
   });
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -44,6 +45,7 @@ function Book() {
       // The flipbook renders two pages side-by-side on desktop, one on mobile.
       // We size a single page; the library handles the spread.
       const isMobile = vw < 768;
+      setIsMobile(isMobile);
 
       // Available width per page
       const maxAvailableWidth = isMobile
