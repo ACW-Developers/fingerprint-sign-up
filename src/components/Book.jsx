@@ -52,9 +52,9 @@ function Book() {
 
       const maxAvailableHeight = vh - verticalPadding;
 
-      // Maintain ~3:4 aspect ratio
-      const aspect = 4 / 3; // height / width
-      let width = Math.min(maxAvailableWidth, 600);
+      // Maintain a slightly shorter aspect ratio to avoid extra space on large screens
+      const aspect = isMobile ? 1.4 : 1.25; // height / width
+      let width = Math.min(maxAvailableWidth, 560);
       let height = width * aspect;
 
       if (height > maxAvailableHeight) {
@@ -64,7 +64,7 @@ function Book() {
 
       // Reasonable minimums
       width = Math.max(280, Math.floor(width));
-      height = Math.max(380, Math.floor(height));
+      height = Math.max(360, Math.floor(height));
 
       setBookSize({ width, height });
     };
