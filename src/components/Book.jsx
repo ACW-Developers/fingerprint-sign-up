@@ -28,7 +28,7 @@ import surgery from "../assets/surgery.png";
 import safina from "../assets/safina.png";
 import fundi from "../assets/fundi1.png";
 import futures from "../assets/5000futures.png";
-import cango from "../assets/Ecommerce.png";
+import cango from "../assets/ecommerce.png";
 import bm from "../assets/bm.png";
 import smarticket from "../assets/smarticket.png";
 
