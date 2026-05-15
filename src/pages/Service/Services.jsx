@@ -4,7 +4,7 @@ import ServiceBox from '../Service/ServiceBox'
 
 const Services = () => {
   return (
-    <div className="h-full page-shadow bg-white p-4 sm:p-6 md:p-8">
+    <div className="h-full page-shadow bg-white p-10">
       {/* heading */}
       <Heading
         title="Services"

@@ -25,56 +25,28 @@ import jikubali from "../assets/jikubali.png";
 import kings from "../assets/kings.png";
 import sme from "../assets/sme.png";
 import surgery from "../assets/surgery.png";
+import safina from "../assets/safina.png";
+import fundi from "../assets/fundi1.png";
+import futures from "../assets/5000futures.png";
+import cango from "../assets/Ecommerce.png";
+import bm from "../assets/bm.png";
+import smarticket from "../assets/smarticket.png";
 
 function Book() {
   const [bookSize, setBookSize] = useState({
-    width: 500,
-    height: 650,
+    width: 600,
+    height: 700
   });
-  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
 
   useEffect(() => {
     const handleResize = () => {
-      const vw = window.innerWidth;
-      const vh = window.innerHeight;
-
-      // Padding around the book
-      const horizontalPadding = 24;
-      const verticalPadding = 24;
-
-      // The flipbook renders two pages side-by-side on desktop, one on mobile.
-      // We size a single page; the library handles the spread.
-      const isMobile = vw < 768;
-      setIsMobile(isMobile);
-
-      // Available width per page
-      const maxAvailableWidth = isMobile
-        ? vw - horizontalPadding
-        : (vw - horizontalPadding) / 2;
-
-      const maxAvailableHeight = vh - verticalPadding;
-
-      // Aspect ratio (height / width). Mobile is taller; desktop is shorter
-      // to avoid excess empty space below the book on large screens.
-      const aspect = isMobile ? 1.45 : 1.15;
-
-      // Cap width tighter on desktop so the overall book height stays compact.
-      const widthCap = isMobile ? 520 : 480;
-      let width = Math.min(maxAvailableWidth, widthCap);
-      let height = width * aspect;
-
-      // Cap height to a fraction of viewport so it never feels too tall.
-      const heightCap = Math.min(maxAvailableHeight, Math.floor(vh * 0.92));
-      if (height > heightCap) {
-        height = heightCap;
-        width = height / aspect;
+      if (window.innerWidth < 768) {
+        setBookSize({ width: 700, height: 800 });
+      } else if (window.innerWidth < 1024) {
+        setBookSize({ width: 700, height: 800 });
+      } else {
+        setBookSize({ width: 600, height: 700 });
       }
-
-      // Reasonable minimums to avoid clipping content.
-      width = Math.max(280, Math.floor(width));
-      height = Math.max(isMobile ? 460 : 520, Math.floor(height));
-
-      setBookSize({ width, height });
     };
 
     handleResize();
@@ -82,7 +54,45 @@ function Book() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-   const ProjectData = [
+  const ProjectData = [
+    {
+      name: "fundiplug.ke",
+      description: "A dynamic webapp for Fundiplug, a marketplace platform for connecting clients to skilled fundis near them.",
+      image: fundi,
+      previewLink: "fundiplug.netlify.app",
+      tools: 'React, Typescript, Supabase',
+      githubLink: 'https://github.com/Wanyangu1?tab=repositories',
+    },
+    {
+      name: "Safina Party Website",
+      description: "A dynamic website for Safina Party, a political organization in Kenya, with features to allow users to check the latest news and view upcoming events.",
+      image: safina,
+      previewLink: "https://safina.ke",
+      tools: 'Wordpress, PHP, MySQL',
+      githubLink: 'https://github.com/Wanyangu1?tab=repositories',
+    },
+  ]; 
+
+   const ProjectData1 = [
+    {
+      name: "2cango Ecommerce",
+      description: "A dynamic e-commerce website for 2cango restaurant with features to allow users to order food online and make payments through mobile money.",
+      image:  cango,
+      previewLink: "https://2cangorestaurant.netlify.app/",
+      tools: 'React, Typescript, Tailwind, Supabase',
+      githubLink: 'https://github.com/Wanyangu1?tab=repositories',
+    },
+    {
+      name: "5000Futures.us",
+      description: "A dynamic website for 5000Futures, a non-profit organization focused on empowering youth through education and mentorship, with features to allow users to check the latest news and view upcoming events.",
+      image: futures,
+      previewLink: "https://5000Futures.us",
+      tools: 'React, Typescript, Tailwind, Supabase',
+      githubLink: 'https://github.com/AIIKS-KSU-TEAM/Ronald_Tombe_Frontend',
+    },
+  ];
+
+  const ProjectData2 = [
     {
       name: "jikubaliafrica.org",
       description: "A professional website for Jikubali Africa, enhancing its online presence and engagement with community stakeholders.",
@@ -102,7 +112,7 @@ function Book() {
   ];
 
   // Extra new projects (SME & Surgery Tracking)
-  const ProjectData2 = [
+  const ProjectData3 = [
     {
       name: "SMEs Management System",
       description: "An integrated management system tailored for small and medium-sized enterprises to streamline operations, sales, and reporting.",
@@ -121,7 +131,7 @@ function Book() {
     },
   ];
 
-  const ProjectData3 = [
+  const ProjectData4 = [
     {
       name: "miteexplorers.com",
       description: "A dynamic website for Mite Explore a travel and tours company with a variety of features to allow users book tours and travel packages.",
@@ -140,7 +150,7 @@ function Book() {
     },
   ];
 
-  const ProjectData4 = [
+  const ProjectData5 = [
     {
       name: "Unashamed Website",
       description: "A dynamic website for Unashamed a Charity organization with a variety of features to allow users to check upcoming events and view the latest news.",
@@ -159,36 +169,12 @@ function Book() {
     },
   ];
 
-  const ProjectData5 = [
-    {
-      name: "AIAA Kenya",
-      description: "Successful integration of Visa and Mastercard payment into a system using Click n Pay APIs.",
-      image:  aiaa,
-      previewLink: "https://aiaa-kenya.org/",
-      tools: 'Vue.js, Django, Tailwindcss',
-      githubLink: 'https://github.com/Wanyangu1?tab=repositories',
-    },
-    {
-      name: "ronaldtombe.co.ke",
-      description: "A portfolio website for Dr. Ronald Kengara Tombe with all the necessary features to maintain an outstanding online presence.",
-      image: ronald,
-      previewLink: "https://ronaldtombe.co.ke/",
-      tools: 'Vue js, Django, Tailwind, Postgres',
-      githubLink: 'https://github.com/AIIKS-KSU-TEAM/Ronald_Tombe_Frontend',
-    },
-  ];
 
   return (
-    <div className="flex justify-center items-center w-full min-h-screen p-2 sm:p-4">
-      <HTMLFlipBook
-        width={bookSize.width}
+    <div className="flex justify-center items-center w-full h-full p-4">
+      <HTMLFlipBook 
+        width={bookSize.width} 
         height={bookSize.height}
-        size="stretch"
-        minWidth={280}
-        maxWidth={600}
-        minHeight={380}
-        maxHeight={900}
-        mobileScrollSupport={true}
         showCover={true}
         className="shadow-2xl"
       >
@@ -221,16 +207,30 @@ function Book() {
           <Resume />
         </Page>
 
-        {(isMobile
-          ? [...ProjectData, ...ProjectData2, ...ProjectData3, ...ProjectData4, ...ProjectData5].map((p) => [p])
-          : [ProjectData, ProjectData2, ProjectData3, ProjectData4, ProjectData5]
-        ).map((data, idx) => (
-          <Page key={`proj-${idx}`} number={6 + idx}>
-            <Projects ProjectData={data} />
-          </Page>
-        ))}
+        <Page number={6}>
+          <Projects ProjectData={ProjectData} />
+        </Page>
+        <Page number={7}>
+          <Projects ProjectData={ProjectData1} />
+        </Page>
+
+        <Page number={8}>
+          <Projects ProjectData={ProjectData2} />
+        </Page>
+
+        <Page number={9}>
+          <Projects ProjectData={ProjectData3} />
+        </Page>
+
+        <Page number={10}>
+          <Projects ProjectData={ProjectData4} />
+        </Page>
 
         <Page number={11}>
+          <Projects ProjectData={ProjectData5} />
+        </Page>
+
+        <Page number={12}>
           <Contac />
         </Page>
 
